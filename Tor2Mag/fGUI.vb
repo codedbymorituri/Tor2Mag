@@ -71,6 +71,8 @@ Public Class fGUI
         MessageBox.Show(MagnetLink, "Tor2Mag - Link has been copied to the clipboard", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
 
+
+
     End Sub
 
 End Class
