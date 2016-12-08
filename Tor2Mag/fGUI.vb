@@ -46,7 +46,7 @@ Public Class fGUI
             Dim TorrentName As String = Torrent.DisplayName()
             GetMagnetLink = Torrent.GetMagnetLink()
         Catch ex As Exception
-            MessageBox.Show(ex.ToString, "Tor2Mag - Bencode Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show(ex.ToString, "Tor2Mag - BencodeNET Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             Exit Sub
         End Try
         If Me.CheckBoxTrackerInfo.Checked = False Then
