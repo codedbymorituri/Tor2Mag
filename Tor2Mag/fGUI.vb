@@ -42,7 +42,7 @@ Public Class fGUI
         Dim MagnetLink As String = Nothing
         Try
             Dim Parser As BencodeParser = New BencodeParser()
-            Dim Torrent = Parser.Parse(Of Torrent)(TorrentFile)
+            Dim Torrent As Torrent = Parser.Parse(Of Torrent)(TorrentFile)
             Dim TorrentName As String = Torrent.DisplayName()
             GetMagnetLink = Torrent.GetMagnetLink()
         Catch ex As Exception
