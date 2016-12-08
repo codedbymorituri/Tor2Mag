@@ -41,7 +41,7 @@ Public Class fGUI
         Dim GetMagnetLink As String = Nothing
         Dim MagnetLink As String = Nothing
         Try
-            Dim Parser = New BencodeParser()
+            Dim Parser As BencodeParser = New BencodeParser()
             Dim Torrent = Parser.Parse(Of Torrent)(TorrentFile)
             Dim TorrentName As String = Torrent.DisplayName()
             GetMagnetLink = Torrent.GetMagnetLink()
@@ -51,8 +51,8 @@ Public Class fGUI
         End Try
         If Me.CheckBoxTrackerInfo.Checked = False Then
             Try
-                Dim RegexObj As New Regex("(^magnet:.+?)&tr")
-                MagnetLink = RegexObj.Match(GetMagnetLink).Groups(1).Value
+                Dim RegexNoTrackerInfo As New Regex("(^magnet:.+?)&tr")
+                MagnetLink = RegexNoTrackerInfo.Match(GetMagnetLink).Groups(1).Value
             Catch ex As ArgumentException
                 MessageBox.Show(ex.ToString, "Tor2Mag - Regex Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 Exit Sub
